@@ -1,7 +1,9 @@
 package ru.netology.radio;
 
-import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class RadioTest {
     @Test
@@ -101,6 +103,24 @@ public class RadioTest {
         int actual = radio.getCurrentRadioStationNumber();
         Assertions.assertEquals(expected, actual);
     }
+    @Test
+    public void testCurrentStationNumberTen() {
+        Radio radio = new Radio();
+        radio.setCurrentRadioStationNumber(10);
+
+        int expected = 0;
+        int actual = radio.getCurrentRadioStationNumber();
+        Assertions.assertEquals(expected, actual);
+    }
+    @Test
+    public void testCurrentStationNumberNegative() {
+        Radio radio = new Radio();
+        radio.setCurrentRadioStationNumber(-1);
+
+        int expected = 0;
+        int actual = radio.getCurrentRadioStationNumber();
+        Assertions.assertEquals(expected, actual);
+    }
 
     @Test
     public void testCurrentVolume() {
@@ -111,6 +131,25 @@ public class RadioTest {
         int actual = radio.getCurrentVolume();
         Assertions.assertEquals(expected, actual);
     }
+    @Test
+    public void testCurrentVolumeHigh() {
+        Radio radio = new Radio();
+        radio.setCurrentVolume(11);
+
+        int expected = 0;
+        int actual = radio.getCurrentVolume();
+        Assertions.assertEquals(expected, actual);
+    }
+    @Test
+    public void testCurrentVolumeNegative() {
+        Radio radio = new Radio();
+        radio.setCurrentVolume(-1);
+
+        int expected = 0;
+        int actual = radio.getCurrentVolume();
+        Assertions.assertEquals(expected, actual);
+    }
+
 
 
 }
